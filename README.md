@@ -10,13 +10,26 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
+# Flutter: Persistent Job Queue
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Introduction
+
+You ever felt like you need to run a job in the background, but you don't want to use the `Isolate` class? This package is for you. It allows you to run jobs in the background, and it persists them in a queue. This means that if the app is closed, the jobs will still be there when the app is opened again.
+
+Use cases:
+
+- Sending data to a server in the background (e.g. analytics data)
+- Downloading files
+- Running a job every x minutes
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Control the number of jobs running at the same time
+- Persist jobs in a queue
+- Run jobs in the background
+- Run jobs when the app is closed
+- Run jobs every x minutes (cron like)
+- Works with hive, sqflite, and shared preferences (you can use your own custom storage by implementing the `JobRepository` class)
 
 ## Getting started
 
